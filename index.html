@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Full Stack Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .link-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background-color: #e0f2fe;
+        }
+
+        .about {
+            background-color: #ffffff;
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .about p {
+            line-height: 1.7;
+            margin: 8px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #e5e7eb;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📘 Full Stack Practice</h1>
+    <p>Main Index Page</p>
+</header>
+
+<main>
+    <h2>HTML Assignments</h2>
+    <p>Click on any topic below to open the corresponding page:</p>
+
+    <div class="link-box">
+        <a href="1.1.html">
+            <div class="card">1.1 HTML Basics</div>
+        </a>
+
+        <a href="1.2.html">
+            <div class="card">1.2 HTML Elements</div>
+        </a>
+
+        <a href="1.3.html">
+            <div class="card">1.3 HTML Lists & Tables</div>
+        </a>
+
+        <a href="1_2_1.html">
+            <div class="card">1.2.1 JavaScript counter experiment</div>
+        </a>
+    </div>
+
+    <!-- ABOUT ME SECTION -->
+    <div class="about">
+        <h2>About Me</h2>
+        <p><strong>Name:</strong> Aryan Srivastava</p>
+        <p><strong>UID:</strong> 24BAI70116</p>
+        <p><strong>Section:</strong> 24AML 5 B</p>
+
+        <p>
+            This website is created for my <strong>Full Stack Development experiments</strong>.
+            All the practical files and assignments related to HTML, CSS, and future full stack
+            technologies will be available here.
+        </p>
+
+        <p>
+            If you have any doubts related to this website or experiments, feel free to contact me at:
+        </p>
+
+        <p><strong>Email:</strong> 24bai70116@cuchd.in</p>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 • Full Stack Practice • GitHub Pages
+</footer>
+
+</body>
+</html>
