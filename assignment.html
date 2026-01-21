@@ -1,0 +1,187 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Learnify - Online Learning Platform</title>
+        <link rel="stylesheet" href="assignment.css">
+    </head>
+    <body>
+
+    
+    <header id="home" class="main-header">
+        <div class="header-container">
+            <h1 class="logo">LEARNIFY</h1>
+
+            <div class="hero-buttons">
+                <button class="btn primary">Get Started</button>
+                <button class="btn secondary">Browse Courses</button>
+            </div>
+        </div>
+
+        <p class="tagline">Learn Skills That Shape Your Future</p>
+    </header>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#plans">Plans</a>
+            <a href="#features">Features</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section class="stats">
+            <div class="stat-box">
+                <h2>50K+</h2>
+                <p>Students</p>
+            </div>
+            <div class="stat-box">
+                <h2>200+</h2>
+                <p>Courses</p>
+            </div>
+            <div class="stat-box">
+                <h2>100+</h2>
+                <p>Mentors</p>
+            </div>
+        </section>
+
+        <section id="courses" class="content">
+            <h2 class="section-title">Popular Courses</h2>
+
+            <div class="course-grid">
+                <article class="card" onclick="openModal()">
+                    <h3>Full Stack Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React & Node.js</p>
+                    <span class="tag">Beginner</span>
+                </article>
+
+                <article class="card" onclick="openModal()">
+                    <h3>AI & Machine Learning</h3>
+                    <p>Python, ML models & real-world projects</p>
+                    <span class="tag">Advanced</span>
+                </article>
+
+                <article class="card" onclick="openModal()">
+                    <h3>Data Science</h3>
+                    <p>Data analysis using Python & SQL</p>
+                    <span class="tag">Intermediate</span>
+                </article>
+
+                <article class="card" onclick="openModal()">
+                    <h3>UI / UX Design</h3>
+                    <p>Design modern user-friendly interfaces</p>
+                    <span class="tag">Beginner</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="plans" class="plans">
+            <h2 class="section-title">Select Your Plan</h2>
+
+            <div class="plan-grid">
+                <div class="plan-card">
+                    <h3>Basic</h3>
+                    <p class="price">₹999</p>
+                    <ul>
+                        <li>✔ Access to 5 courses</li>
+                        <li>✔ Recorded video lectures</li>
+                        <li>✔ Community support</li>
+                    </ul>
+                    <button class="btn primary">Choose Plan</button>
+                </div>
+
+                <div class="plan-card highlight">
+                    <h3>Standard</h3>
+                    <p class="price">₹2,499</p>
+                    <ul>
+                        <li>✔ Access to all courses</li>
+                        <li>✔ Certificates</li>
+                        <li>✔ Mentor guidance</li>
+                    </ul>
+                    <button class="btn primary">Choose Plan</button>
+                </div>
+
+                <div class="plan-card">
+                    <h3>Premium</h3>
+                    <p class="price">₹4,999</p>
+                    <ul>
+                        <li>✔ 1-on-1 mentorship</li>
+                        <li>✔ Career support</li>
+                        <li>✔ Interview preparation</li>
+                    </ul>
+                    <button class="btn primary">Choose Plan</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title">Why Choose Learnify?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">🎓 Expert Instructors</div>
+                <div class="feature-card">⏳ Self-Paced Learning</div>
+                <div class="feature-card">📜 Certifications</div>
+                <div class="feature-card">💼 Career Support</div>
+            </div>
+        </section>
+
+        <section id="reviews" class="testimonials">
+            <h2 class="section-title">Student Reviews</h2>
+
+            <article class="review">
+                <p>"The courses are very easy to understand and practical."</p>
+                <h4>- Aman, Engineering Student</h4>
+            </article>
+
+            <article class="review">
+                <p>"Beautiful platform and excellent mentors!"</p>
+                <h4>- Neha, AI Learner</h4>
+            </article>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Email: support@learnify.com</p>
+            <p>Phone: +91 98765 43210</p>
+        </section>
+
+
+        <div id="enrollModal" class="modal">
+            <div class="modal-content">
+                <h2>Enrollment Successful 🎉</h2>
+                <p>
+                    You have been enrolled in the course.<br>
+                    You will get a support call within 24 hours.
+                </p>
+                <button class="btn primary" onclick="closeModal()">OK</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2026 Learnify | Academic Demo Website</p>
+        </footer>
+
+        <script>
+            function openModal() {
+                document.getElementById("enrollModal").style.display = "block";
+            }
+            function closeModal() {
+                document.getElementById("enrollModal").style.display = "none";
+            }
+        </script>
+
+
+
+
+
+
+        
+
+
+
+    </body>
+
+
+
+
+
+    </html>
