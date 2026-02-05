@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Product Filter</title>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2.5rem;
+    }
+
+    .filter-section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-right: 1rem;
+      color: var(--gray);
+    }
+
+    select {
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      background: white;
+      min-width: 240px;
+      cursor: pointer;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .product-image {
+      height: 220px;
+      background: #f1f5f9;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.25rem;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-category {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f766e;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      select { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Product Filter</h1>
+
+  <div class="filter-section">
+    <label for="categoryFilter">Filter by:</label>
+    <select id="categoryFilter">
+      <option value="all">All Products</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+    </select>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+</div>
+
+<script>
+const products = [
+  { id: 1, name: "Wireless Headphones", price: 12999, category: "electronics", image: "https://picsum.photos/seed/headphones/600/600" },
+  { id: 2, name: "Cotton T-Shirt", price: 2499, category: "clothing", image: "https://picsum.photos/seed/tshirt/600/600" },
+  { id: 3, name: "Bluetooth Speaker", price: 8999, category: "electronics", image: "https://picsum.photos/seed/speaker/600/600" },
+  { id: 4, name: "Denim Jeans", price: 5999, category: "clothing", image: "https://picsum.photos/seed/jeans/600/600" }
+];
+
+const productsGrid = document.getElementById("productsGrid");
+const categoryFilter = document.getElementById("categoryFilter");
+
+function createProductCard(product) {
+  const card = document.createElement("div");
+  card.className = "product-card";
+  card.innerHTML = `
+    <div class="product-image">
+      <img src="${product.image}">
+    </div>
+    <div class="product-info">
+      <h3 class="product-title">${product.name}</h3>
+      <span class="product-category">${product.category}</span>
+      <div class="product-price">₹${product.price}</div>
+    </div>
+  `;
+  return card;
+}
+
+function renderProducts(list) {
+  productsGrid.innerHTML = "";
+  list.forEach(p => productsGrid.appendChild(createProductCard(p)));
+}
+
+categoryFilter.addEventListener("change", () => {
+  const value = categoryFilter.value;
+  renderProducts(value === "all" ? products : products.filter(p => p.category === value));
+});
+
+renderProducts(products);
+</script>
+
+</body>
+</html>
