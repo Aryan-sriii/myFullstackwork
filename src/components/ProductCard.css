@@ -1,0 +1,47 @@
+.card {
+  width: 300px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image-placeholder {
+  height: 160px;
+  background: linear-gradient(145deg, #eef3f7, #dde6ed);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.badge.in {
+  background: #e6f7ec;
+  color: #1e7e34;
+}
+
+.badge.out {
+  background: #fdecea;
+  color: #b02a37;
+}
